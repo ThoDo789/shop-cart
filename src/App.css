@@ -1,9 +1,153 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
 
-*{
-  margin: 0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Poppins', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 
+}
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --main: #ff6e68
+}
+
+.container {
+    width: 100%;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 5px 20px 2px rgba(0, 0, 0, .1);
+    background: var(--white);
+    position: fixed;
+    z-index: 1;
+}
+
+.nav__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    justify-content: space-between;
+
+}
+
+.nav__left  img {
+    display: block;
+   height: 70px;
+    width: auto;
+
+
+}
+
+.header {
+
+    background: url("./images/banner.webp") no-repeat;
+    background-size: cover;
+    background-position: 30% -40% ;
+    width: 100%;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+.cart-icon {
+    color: var(--main);
+}
+
+.basket {
+    position: relative;
+}
+
+.basket span {
+    display: block;
+   padding: 0 4px;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    height: 15px;
+    width:15px;
+    font-size: 10px;
+    color: var(--white);
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, var(--main), #310080);
+}
+/*------------------------------------------ddd------------------------------------*/
+.mtb-30{
+    margin-top:30px;
+    margin-bottom: 30px;
+}
+.row{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+.col-3{
+    width: 25%;
+}
+.col-6{
+    width: 50%;
+}
+.product{
+ padding:25px;
+    width:100%;
+    overflow: hidden;
+}
+.product__img {
+    width:100%;
+    height:auto;
+    overflow: hidden;
+}
+.product__img img{
+    width: 100%;
+    height:100% ;
+    transition: all .3s linear;
+
+}
+
+.product__img img:hover{
+    transform: scale(1.2);
+}
+.product__name{
+    margin: 10px 0;
+    text-transform: capitalize;
+    color: #707070;
+}
+.product__name--price{
+    text-align: right;
+    font-size: 18px;
+}
+.actual-price{
+    text-decoration:line-through ;
+    font-size: 18px;
+}
+.product__discount--percent{
+    color:silver;
+    font-weight: 400;
+    font-size: 12px;
+}
+/*-----------------------responsive-------------------------------------------------------------*/
+@media (max-width:765px){
+    .container{
+        width: 100%;
+        padding: 0 30px;
+    }
+    .col-3{
+        width: 50%;
+    }
+}
+@media (max-width: 400px){
+    .col-3{
+        width: 100%;
+    }
 }
