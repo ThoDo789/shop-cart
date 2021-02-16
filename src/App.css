@@ -235,6 +235,12 @@ a {
     .col-3 {
         width: 50%;
     }
+    .col-6{
+        width: 100%;
+    }
+    .detail__name.mt-10{
+     margin-top: 0;
+    }
 }
 
 @media (max-width: 400px) {

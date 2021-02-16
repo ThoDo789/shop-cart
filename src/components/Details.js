@@ -4,7 +4,7 @@ import {useDispatch,useSelector} from "react-redux";
 import currencyFormatter from "currency-formatter";
 import {AiFillMinusSquare, AiFillPlusSquare} from "react-icons/all";
 const Details = () => {
-    const [quantity,setQuantity]=useState(0)
+    const [quantity,setQuantity]=useState(1)
     const {id}= useParams()
     const{product}=useSelector(state=>state.ProductReducer)
     console.log(product)
@@ -40,7 +40,7 @@ const Details = () => {
                            <span className="dec" onClick={decQuantity}><AiFillMinusSquare/></span>
                            <span className="quantity">{quantity}</span>
                            <span className="inc" onClick={()=>setQuantity(quantity+1)}><AiFillPlusSquare/></span>
-                           <button className="btn-default">add to cart</button>
+                           <button className="btn-default" onClick={()=>{dispatch({type:'ADD_TO_CART',payload: {product, quantity}})}}>add to cart</button>
                        </div>
                         <div className="detail__desc">
                             <h4>Details</h4>
