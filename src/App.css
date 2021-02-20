@@ -6,12 +6,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
+
 }
 
 :root {
     --white: #fff;
     --black: #000;
-    --main: #ff6e68
+    --main: #ff6868
 }
 
 .container {
@@ -46,6 +47,37 @@
 
 }
 
+.search {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-search {
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+}
+
+.btn-search {
+    outline:none;
+    background-color: var(--main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin-left: 4px;
+   width: max-content;
+    padding: 0 20px;
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+}
+
 .header {
 
     background: url("./images/banner.webp") no-repeat;
@@ -68,17 +100,19 @@ a {
 }
 
 .basket span {
-    display: block;
-    padding: 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
     right: -10px;
-    height: 15px;
-    width: 15px;
+    padding: 0 10%;
+    height: max-content;
+    width: max-content;
     font-size: 10px;
     color: var(--white);
     border-radius: 50%;
-    background-image: linear-gradient(45deg, var(--main), #310080);
+    background: #476200;
 }
 
 /*------------------------------------------ddd------------------------------------*/
@@ -97,9 +131,11 @@ a {
     flex-wrap: wrap;
 
 }
-.col-2{
+
+.col-2 {
     width: 16.33333333%;
 }
+
 .col-3 {
     width: 25%;
 }
@@ -107,9 +143,11 @@ a {
 .col-6 {
     width: 50%;
 }
-.col-9{
+
+.col-9 {
     width: 75%;
 }
+
 /*----------------------------------product-------------------------------------------*/
 .product {
     padding: 25px;
@@ -195,9 +233,11 @@ a {
 .detail__info {
 
 }
-.detail__incDec{
+
+.detail__incDec {
     display: flex;
 }
+
 .dec, .inc, .quantity {
     width: 60px;
     height: 60px;
@@ -206,19 +246,22 @@ a {
     justify-content: center;
     align-items: center;
     transition: background-color .3s linear;
+    cursor: pointer;
 }
-.dec:hover ,
-.inc:hover,
-.quantity:hover{
-background-color:var(--main);
+
+.dec:hover,
+.inc:hover {
+    background-color: var(--main);
     color: var(--white)
 }
-.quantity{
-    border-left:none ;
-    border-right:none ;
+
+.quantity {
+    border-left: none;
+    border-right: none;
 }
-.btn-default{
-    margin-left:10px;
+
+.btn-default {
+    margin-left: 10px;
     width: 45%;
     max-width: 500px;
     border: none;
@@ -230,122 +273,205 @@ background-color:var(--main);
     user-select: none;
 
 }
-.detail__desc{
+
+.detail__desc {
     margin-top: 15px;
 }
-.detail__desc h4{
+
+.detail__desc h4 {
     margin-bottom: 10px;
     font-size: 18px;
 }
-/*-------------------------------cart-------------------------------------------*/
-.cart-empty{
 
-    margin: 30px auto ;
+/*-------------------------------cart-------------------------------------------*/
+.cart-empty {
+
+    margin: 30px auto;
 }
-.empty-cart__title{
+
+.empty-cart__title {
     display: block;
     font-size: 1.25rem;
     text-align: center;
     text-transform: capitalize;
     margin-bottom: 30px;
 }
-img.empty-cart__img{
-    width: 50vw ;
+
+img.empty-cart__img {
+    width: 50vw;
     height: auto;
 }
 
-.cart{
- text-transform: capitalize;
+.cart {
+    text-transform: capitalize;
 }
 
 .cart h3 {
     padding-top: 100px;
 }
 
-.cart__heading{
+.qty-title {
+    color: var(--main);
+}
+
+.cart__heading {
     background: #f4f6f8;
     padding: 10px;
     text-align: center;
 }
-.cart__image img{
+
+.cart__image img {
     width: 100px;
     height: auto;
     object-fit: contain;
 }
-.text{
+
+.text {
     padding: 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.col-2{
+
+.col-2 {
     display: flex;
     justify-content: center;
 
 }
-.car__remove{
+
+.cart__remove {
     font-size: 28px;
-    color: #8e8d8d;
+    height: 32px;
+    width: 32px;
+    border: 3px;
+    color: #929292;
+    border-radius: 3px;
+    cursor: pointer;
+
 }
+
+.cart__remove:hover {
+    background-color: var(--main);
+    color: var(--white);
+}
+
+.summary {
+    padding-left: 10px;
+}
+
+.summary__heading {
+    text-align: center;
+    background: #f4f6f8;
+    padding: 10px;
+}
+
+.summary__details {
+    background-color: var(--main);
+    color: var(--white);
+    padding: 20px;
+
+    margin-top: 30px;
+}
+
+.checkout {
+    position: relative;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--white);
+    color: var(--main);
+    width: max-content;
+    max-width: 200px;
+    padding: 12px 12px;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: all .2s linear;
+
+}
+
+.checkout:hover {
+    letter-spacing: 2px;
+
+}
+
 /*-----------------------responsive-------------------------------------------------------------*/
 @media (max-width: 765px) {
     .container {
         width: 100%;
         padding: 0 30px;
     }
+
     .header {
         background-position: center 50px;
     }
-    .col-2{
+
+    .col-2 {
         width: 100%;
     }
 
     .col-3 {
-        width: 50%;
-    }
-    .col-6{
         width: 100%;
     }
-    .col-9{
+
+    .col-6 {
         width: 100%;
     }
-    .detail__name.mt-10{
-     margin-top: 0;
+
+    .col-9 {
+        width: 100%;
     }
-    .cart__heading{
+
+    .detail__name.mt-10 {
+        margin-top: 0;
+    }
+
+    .cart__heading {
         display: none;
     }
-    .cart__image img{
+
+    .cart__image img {
         width: 100%;
     }
 }
 
 @media (max-width: 400px) {
-    .col-2{
+    .col-2 {
         width: 100%;
     }
+
     .col-3 {
         width: 100%;
     }
-    .col-9{
+
+    .col-9 {
         width: 100%;
     }
-    .header{
+
+    .header {
         background-position: -24vw 14vh;
     }
-    .text{
-        flex-direction:column ;
+
+    .text {
+        flex-direction: column;
     }
 }
+
 @media (min-width: 766px) and (max-width: 1366px) {
-    .col-9{
+    .col-3 {
+        width: 50%;
+    }
+
+    .col-9 {
         width: 100%;
     }
-    .header{
+
+    .header {
         background-position: center 50px;
     }
-    .dec, .inc, .quantity{
+
+    .dec, .inc, .quantity {
         width: 40px;
         height: 40px;
 

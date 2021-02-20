@@ -132,14 +132,23 @@ const initState = {
         },
 
     ],
-    product:{}
+    product: {},
+    key: ''
 }
 
 const ProductReducer = (state = initState, action) => {
-    console.log(typeof action.id)
+
     switch (action.type) {
         case 'PRODUCT':
-            return {...state, product: state.products.find(product=>product.id===parseInt(action.id))}
+            return {
+                ...state,
+                product: state.products.find(product => product.id === parseInt(action.id))
+            }
+        case "SEARCH_KEY":
+            return {
+                ...state,
+                key:action.payload
+            }
         default:
             return state
 
