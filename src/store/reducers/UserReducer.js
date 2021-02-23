@@ -16,6 +16,8 @@ const userReducer =(state=initialState,action)=>{
                         user:action.payload,
                         loading: false
                     }
+
+
                 default:
                     return state
             }

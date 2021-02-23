@@ -131,9 +131,38 @@ const initState = {
                 'ut vel vitae! Harum, nemo!\n'
         },
 
+        {
+            id: 11,
+            name: 'male winter jacket'
+            , image: '10.jpg',
+            price: 120,
+            discount: 3,
+            discountPrice: 120 - 3 / 100 * 120,
+            quantity: 1,
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
+                'maxime necessitatibus nemo nihil nostrum nulla reiciendis, ' +
+                'ut vel vitae! Harum, nemo!\n'
+        },
+        {
+            id: 12,
+            name: 'male winter jacket'
+            , image: '10.jpg',
+            price: 120,
+            discount: 3,
+            discountPrice: 120 - 3 / 100 * 120,
+            quantity: 1,
+            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
+                'maxime necessitatibus nemo nihil nostrum nulla reiciendis, ' +
+                'ut vel vitae! Harum, nemo!\n'
+        },
+
     ],
     product: {},
-    key: ''
+    key: '',
+    status:true,
+    themes:null
 }
 
 const ProductReducer = (state = initState, action) => {
@@ -148,6 +177,15 @@ const ProductReducer = (state = initState, action) => {
             return {
                 ...state,
                 key:action.payload
+            }
+        case "DARK_MODE":
+            const light = {background:'#2c2c2c', color:'#fff'}
+            const  dark= {background:"#fff", color:"#2c2c2c"}
+            return {
+                ...state,
+                status:action.payload,
+                themes: action.payload===true?light:dark
+
             }
         default:
             return state

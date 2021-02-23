@@ -1,27 +1,26 @@
 import React, {Suspense} from "react"
 import './App.css';
-import {Provider} from "react-redux"
+import store from "./store/store";
+import {Provider} from  "react-redux"
+
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
-// import Nav from "./components/Nav";
-import Home from "./components/Home";
-import Cart from "./components/Cart";
-import Details from "./components/Details";
-import store from "./store";
-import Loading from "./components/Loading";
-
-
+import Loading from "./components/page/loading/Loading";
+import Footer from "./components/page/footer/Footer";
 function App() {
-    const Nav = React.lazy(() => import('./components/Nav'));
-    const Home = React.lazy(() => import('./components/Home'));
-    const Cart = React.lazy(() => import('./components/Cart'));
-    const Details = React.lazy(() => import('./components/Details'));
-    const User = React.lazy(() => import('./components/User'));
-    const PageNotFound = React.lazy(() => import('./components/PageNotFound'));
+    const Nav = React.lazy(() => import('./components/page/nav/Nav'));
+    const Home = React.lazy(() => import('./components/page/home/Home'));
+    const Cart = React.lazy(() => import('./components/feature/cart/Cart'));
+    const Details = React.lazy(() => import('./components/feature/details/Details'));
+    const User = React.lazy(() => import('./components/feature/User'));
+    const PageNotFound = React.lazy(() => import('./components/page/page-not-found/PageNotFound'));
+
+
     return (
+
         <Router className="App">
             <Suspense fallback={<Loading/>}>
-            <Provider store={store}>
+                <Provider store={store}>
 
                     <Nav/>
                     <Switch>
@@ -31,9 +30,11 @@ function App() {
                         <Route path="/user" exact component={User}/>
                         <Route component={PageNotFound}/>
                     </Switch>
-            </Provider>
+                    <Footer/>
+                </Provider>
             </Suspense>
         </Router>
+
     );
 }
 

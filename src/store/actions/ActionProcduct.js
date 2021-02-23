@@ -10,3 +10,9 @@ export const searchList =(name)=>{
         payload:name
     }
 }
+export const DarkMode =(status)=>{
+    return {
+        type:'DARK_MODE',
+        payload:status
+    }
+}

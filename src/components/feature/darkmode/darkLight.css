@@ -1,0 +1,15 @@
+.dark-light{
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--main);
+    background-color: transparent;
+    transition: all .2s linear;
+
+
+}

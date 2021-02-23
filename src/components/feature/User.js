@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from "react-redux";
-import {getUser} from "../store/actions/ActionUser";
+import {getUser} from "../../store/actions/ActionUser";
 
 import {Link} from "react-router-dom";
 import currencyFormatter from "currency-formatter";

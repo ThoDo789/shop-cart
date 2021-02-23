@@ -1,0 +1,56 @@
+.product {
+    padding-top: 20px;
+
+    overflow: hidden;
+}
+.not-found{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #545050;
+    text-transform: capitalize;
+}
+.product__img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.product__img img {
+    width: 100%;
+    height: 100%;
+    transition: all .3s linear;
+
+}
+
+.product__img img:hover {
+    transform: scale(1.2);
+}
+
+.product__name {
+    margin: 10px 0;
+    text-transform: capitalize;
+    color: #707070;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+.product__name--price {
+    text-align: right;
+    font-size: 18px;
+}
+
+.actual-price {
+    text-decoration: line-through;
+    font-size: 18px;
+}
+
+.product__discount--percent {
+    color: silver;
+    font-weight: 400;
+    font-size: 12px;
+}

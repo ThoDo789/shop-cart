@@ -1,0 +1,38 @@
+.search {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.input-search {
+    display: block;
+
+    max-width: 500px;
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+
+}
+.input-search::-webkit-input-placeholder{
+    font-size: 16px;
+
+  
+
+}
+.btn-search {
+    border: none;
+    outline: none;
+    color: var(--white);
+    cursor: pointer;
+    width: max-content;
+
+    background-color: var(--main);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    padding: 0 20px;
+
+}
