@@ -56,7 +56,7 @@ const Cart = () => {
                                         </div>
                                         <div className="col-lg-2 col-md-2 col-sm-12">
                                             <div className="car__price">
-                                                {currencyFormatter.format(product.discountPrice  , {code: 'USD'})}
+                                                {currencyFormatter.format((product.price - product.discount/100 * product.price)  , {code: 'USD'})}
                                             </div>
                                         </div>
                                         <div className="col-lg-2 col-md-2 col-sm-12">
@@ -72,7 +72,7 @@ const Cart = () => {
                                         </div>
                                         <div className="col-lg-2 col-md-2 col-sm-12">
                                             <div className="car__total">
-                                                {currencyFormatter.format( product.discountPrice*product.quantity , {code: 'USD'})}
+                                                {currencyFormatter.format( (product.price - product.discount/100 * product.price)*product.quantity , {code: 'USD'})}
                                             </div>
                                         </div>
                                         <div className="col-lg-2 col-md-2 col-sm-12 d-block d-sm-none d-md-block">

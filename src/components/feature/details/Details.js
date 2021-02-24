@@ -30,7 +30,7 @@ const Details = () => {
             <div className="container-fluid " style={themes}>
                 <div className="container detail" >
                     <div className="row">
-                        <div className="col-lg-6 col-md-6 col-sm-12">
+                        <div className=" detail__img col-lg-6 col-md-6 col-sm-12">
                             <div className="detail__image mt-10">
                                 <img src={`/images/${product.image}`} alt=""/>
                             </div>
@@ -40,7 +40,7 @@ const Details = () => {
                             <div className="detail__price ">
                                 <span className="detail__actual">{currencyFormatter.format(product.price, {code: 'USD'})}</span>
                                 <span
-                                    className="detail__discount">   {currencyFormatter.format(product.discountPrice, {code: 'USD'})}</span>
+                                    className="detail__discount">   {currencyFormatter.format((product.price - product.discount/100 * product.price), {code: 'USD'})}</span>
                             </div>
                             <div className="detail__info row">
                                 <div className="detail__incDec col-lg-6 col-md-6 col-sm-12">
@@ -49,9 +49,11 @@ const Details = () => {
                                     <span className="inc" onClick={() => setQuantity(quantity + 1)}><BsPlus/></span>
 
                                 </div>
-                                <button className="btn-default col-lg-6 col-md-6 col-sm-12"
-                                        onClick={onAddToCart}>add to cart
-                                </button>
+                                <div className=" col-lg-6 col-md-6 col-sm-12">
+                                    <button  className="btn-default" onClick={onAddToCart}>add to cart
+                                    </button>
+                                </div>
+
                                 <div className="detail__desc col-12 text-left">
                                     <h4>Details</h4>
                                     <span className="detail__info">{product.desc}</span>

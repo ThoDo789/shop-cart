@@ -1,6 +1,57 @@
 .footer{
 
     width: 100%;
-    background-color: var(--main);
-    height: 8em;
+    height: max-content;
+    background-color: #2c2c2c;
+    color: #cccccc;
+   border-top: 1px solid var(--main) ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+.footer__location, .footer__number-phone,.footer__support{
+    height: max-content;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+
+}
+.footer__location svg, .footer__number-phone svg , .footer__support svg  {
+    font-size: 25px;
+}
+.location--title, .number-phone, .support{
+    padding: 0 8px;
+    display: block;
+
+
+}
+.number-phone{
+    color: var(--main);
+}
+.number-phone:hover{
+    color:#f74545
+}
+.location--title strong{
+    display: block;
+
+}
+
+
+.footer__info--title{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 600;
+
+}
+.footer__info--content{
+font-size: 12px;
+}
+.footer__socials{
+
+}
+.footer__icon svg{
+    margin-right: 5px;
+    font-size: 30px;
+
 }

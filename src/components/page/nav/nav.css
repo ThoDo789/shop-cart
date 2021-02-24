@@ -6,7 +6,7 @@
     background: var(--white);
 
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     padding: 0 20px ;
 }
 

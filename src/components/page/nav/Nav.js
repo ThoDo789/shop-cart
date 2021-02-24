@@ -22,25 +22,26 @@ const Nav = () => {
     return (
         <div className="navbar container-fluid" style={themes}>
 
-                <div className="nav__container">
+                <div className="nav__container row">
                     <div className="nav__left">
                        <button className="btn-home" onClick={backHome} type="button"><img src="/images/logo.webp" alt=""/></button>
                     </div>
-                    <Search/>
+                    <Search />
                     <DarkLightThemes/>
                     <div className="nav__right">
-                      <Link to="/cart" className="tablet">
+                      <Link to="/cart" className=" pc">
                           <div className="basket">
                               <AiOutlineShoppingCart size='30' className="cart-icon"/>
                               <span>{totalQuantities}</span>
                           </div>
                       </Link>
-                        <div id="nav-icon1" onClick={onMenuMobile} className={trigger===true?'open mobile':'mobile'}>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
 
+
+                    </div>
+                    <div id="nav-icon1" onClick={onMenuMobile} className={trigger===true?'open d-lg-none d-md-none d-sm-block':'d-lg-none d-md-none d-sm-block'}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
 
                 </div>

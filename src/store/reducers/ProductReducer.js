@@ -1,12 +1,14 @@
+import {DARK_MODE, PRODUCT, SEARCH_KEY, SORT_NAME_AZ, SORT_NAME_ZA, SORT_PRICE_DEC, SORT_PRICE_INC} from "../../types";
+
 const initState = {
     products: [
         {
             id: 1,
-            name: 'man shirt summer season'
+            name: 'sn shirt summer season'
             , image: '1.jpg',
             price: 20
             , discount: 2,
-            discountPrice: 20 - 2 / 100 * 20,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -15,11 +17,11 @@ const initState = {
         },
         {
             id: 2,
-            name: 'woman jacket summer season'
+            name: 'boman jacket summer season'
             , image: '2.jpg',
             price: 30
             , discount: 5,
-            discountPrice: 30 - 5 / 100 * 30,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -28,11 +30,11 @@ const initState = {
         },
         {
             id: 3,
-            name: 'man trouser for all season'
+            name: 'can trouser for all season'
             , image: '3.jpg',
             price: 15
             , discount: 3,
-            discountPrice: 15 - 3 / 100 * 15,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -45,7 +47,7 @@ const initState = {
             , image: '4.jpg',
             price: 50
             , discount: 4,
-            discountPrice: 50 - 4 / 100 * 50,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -58,7 +60,7 @@ const initState = {
             , image: '5.jpg',
             price: 25,
             discount: 2,
-            discountPrice: 25 - 2 / 100 * 25,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -71,7 +73,7 @@ const initState = {
             , image: '6.jpg',
             price: 60,
             discount: 6,
-            discountPrice: 60 - 6 / 100 * 60,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -84,7 +86,7 @@ const initState = {
             , image: '7.jpg',
             price: 35,
             discount: 2,
-            discountPrice: 35 - 2 / 100 * 35,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -97,7 +99,7 @@ const initState = {
             , image: '8.jpg',
             price: 80,
             discount: 7,
-            discountPrice: 80 - 7 / 100 * 80,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -110,7 +112,7 @@ const initState = {
             , image: '9.jpg',
             price: 95,
             discount: 4,
-            discountPrice: 95 - 4 / 100 * 95,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -123,7 +125,7 @@ const initState = {
             , image: '10.jpg',
             price: 120,
             discount: 3,
-            discountPrice: 120 - 3 / 100 * 120,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -137,7 +139,7 @@ const initState = {
             , image: '10.jpg',
             price: 120,
             discount: 3,
-            discountPrice: 120 - 3 / 100 * 120,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -150,7 +152,7 @@ const initState = {
             , image: '10.jpg',
             price: 120,
             discount: 3,
-            discountPrice: 120 - 3 / 100 * 120,
+
             quantity: 1,
             desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
                 'Ab amet aspernatur beatae debitis eos fuga harum iste magnam ' +
@@ -161,31 +163,78 @@ const initState = {
     ],
     product: {},
     key: '',
-    status:true,
-    themes:null
+    status: true,
+    themes: null
 }
 
 const ProductReducer = (state = initState, action) => {
 
     switch (action.type) {
-        case 'PRODUCT':
+        case PRODUCT:
             return {
                 ...state,
                 product: state.products.find(product => product.id === parseInt(action.id))
             }
-        case "SEARCH_KEY":
+        case SEARCH_KEY:
             return {
                 ...state,
-                key:action.payload
+                key: action.payload
             }
-        case "DARK_MODE":
-            const light = {background:'#2c2c2c', color:'#fff'}
-            const  dark= {background:"#fff", color:"#2c2c2c"}
+        case DARK_MODE:
+            const light = {background: '#2c2c2c', color: '#fff'}
+            const dark = {background: "#fff", color: "#2c2c2c"}
             return {
                 ...state,
-                status:action.payload,
-                themes: action.payload===true?light:dark
+                status: action.payload,
+                themes: action.payload === true ? light : dark
 
+            }
+        // -------SORT---------
+        case SORT_NAME_AZ:
+            const sortName = [...state.products].sort((a, b) => {
+
+                if (a.name < b.name)
+                    return -1;
+                if (a.name > b.name)
+                    return 1;
+                return 0;
+
+            })
+            return {
+                ...state,
+                products: sortName
+            }
+        case SORT_NAME_ZA:
+            const sortNameDec = [...state.products].sort((a, b) => {
+
+                if (a.name < b.name)
+                    return 1;
+                if (a.name > b.name)
+                    return -1;
+                return 0;
+
+            })
+            return {
+                ...state,
+                products: sortNameDec
+            }
+        case SORT_PRICE_INC:
+            const priceInc = [...state.products].sort((a, b) => {
+                return a.price - b.price
+            })
+
+            return {
+                ...state,
+                products: priceInc
+            }
+        case SORT_PRICE_DEC:
+            const priceDec = [...state.products].sort((a, b) => {
+                return b.price - a.price
+            })
+
+            return {
+                ...state,
+                products: priceDec
             }
         default:
             return state

@@ -1,19 +1,21 @@
 .detail {
     padding-top: 100px;
 }
+
 .detail__image {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: calc(100vh - 8em);
-    padding: 0 15px;
+
+
 
 }
 
 .detail__image img {
   object-fit: cover;
     margin-bottom: 25px;
-    padding: 40px
+    width: 100%;
+
 
 
 }
@@ -90,7 +92,7 @@
 }
 
 .detail__desc {
-    margin-top: 15px;
+    margin:15px 0;
 }
 
 .detail__desc h4 {

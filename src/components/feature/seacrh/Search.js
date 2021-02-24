@@ -1,12 +1,12 @@
 import React, {Fragment, useState} from 'react';
 import {BsSearch} from "react-icons/all";
-import {useLocation} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {searchList} from "../../../store/actions/ActionProcduct";
 import './search.css'
 const Search = () => {
 
-    const location = useLocation();
+    const history = useHistory()
 
     const dispatch=useDispatch()
 
@@ -24,11 +24,12 @@ const Search = () => {
        dispatch(searchList(name))
 
         window.scroll(0,800)
+        history.push("/")
     }
 
     return (
-        <Fragment>
-            {location.pathname==="/"&&<form className="search"
+        <Fragment >
+            <form className="search d-lg-flex d-sm-none d-md-flex "
                                             onSubmit={onSubmit}
             >
                 <input type="text"
@@ -39,7 +40,7 @@ const Search = () => {
                        onChange={onHandlerSearch}
                 />
                 <button type="submit" className="btn-search"><BsSearch/></button>
-            </form>}
+            </form>
         </Fragment>
     );
 };

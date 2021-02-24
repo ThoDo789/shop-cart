@@ -91,7 +91,8 @@
     background-color: var(--main);
     color: var(--white);
     padding: 20px;
-
+    width: max-content;
+    min-width: 100%;
     margin-top: 30px;
 }
 
