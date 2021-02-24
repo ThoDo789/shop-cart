@@ -1,0 +1,32 @@
+.menu{
+    position: fixed;
+    top:0;
+   left: 0;
+    z-index: 200;
+    background-color: var(--main);
+    height:100vh;
+    width:0;
+    text-align: center;
+    overflow: hidden;
+    transition: width .3s ease-in-out;
+
+}
+.menu-open{
+    width:60vw;
+}
+
+.menu__list {
+    list-style-type: none;
+
+
+
+}
+
+.menu__item {
+padding: 2px 5px;
+    margin: 30px 2px;
+}
+
+.menu__link {
+color: var(--white);
+}

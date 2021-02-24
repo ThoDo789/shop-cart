@@ -1,4 +1,13 @@
-import {DARK_MODE, PRODUCT, SEARCH_KEY, SORT_NAME_AZ, SORT_NAME_ZA, SORT_PRICE_DEC, SORT_PRICE_INC} from "../../types";
+import {
+    DARK_MODE,
+    PRODUCT,
+    SEARCH_KEY,
+    SHOW_HIDE_MENU,
+    SORT_NAME_AZ,
+    SORT_NAME_ZA,
+    SORT_PRICE_DEC,
+    SORT_PRICE_INC
+} from "../../types";
 
 export const productList =(id)=>{
   return {
@@ -40,5 +49,11 @@ export const sortPriceDec =(value)=>{
     return{
         type:SORT_PRICE_DEC,
         payload: value
+    }
+}
+export const status =(st)=>{
+    return{
+        type:SHOW_HIDE_MENU,
+        payload:st
     }
 }

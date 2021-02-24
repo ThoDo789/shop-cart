@@ -1,4 +1,13 @@
-import {DARK_MODE, PRODUCT, SEARCH_KEY, SORT_NAME_AZ, SORT_NAME_ZA, SORT_PRICE_DEC, SORT_PRICE_INC} from "../../types";
+import {
+    DARK_MODE,
+    PRODUCT,
+    SEARCH_KEY,
+    SHOW_HIDE_MENU,
+    SORT_NAME_AZ,
+    SORT_NAME_ZA,
+    SORT_PRICE_DEC,
+    SORT_PRICE_INC
+} from "../../types";
 
 const initState = {
     products: [
@@ -164,7 +173,8 @@ const initState = {
     product: {},
     key: '',
     status: true,
-    themes: null
+    themes: null,
+    showHide: false
 }
 
 const ProductReducer = (state = initState, action) => {
@@ -236,6 +246,12 @@ const ProductReducer = (state = initState, action) => {
                 ...state,
                 products: priceDec
             }
+        case SHOW_HIDE_MENU:
+            return {
+                ...state,
+                showHide: action.payload
+            }
+
         default:
             return state
 

@@ -1,10 +1,12 @@
-import React,{useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {AiOutlineShoppingCart} from "react-icons/all";
 import {Link, useHistory} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import './nav.css'
 import Search from "../../feature/seacrh/Search";
 import DarkLightThemes from "../../feature/darkmode/DarkLightThemes";
+import Menu from "../menu/Menu";
+import {status} from "../../../store/actions/ActionProcduct";
 
 const Nav = () => {
 
@@ -12,13 +14,18 @@ const Nav = () => {
     const{themes} =useSelector(state=>state.ProductReducer)
     const [trigger,setTrigger] = useState(false)
     const history= useHistory()
+    const dispatch =useDispatch()
     const backHome =()=>{
         window.scroll(0,0)
         history.push('/')
     }
     const onMenuMobile =()=>{
         setTrigger(!trigger)
+
     }
+    useEffect(()=>{
+        console.log(dispatch(status(trigger)))
+    },[trigger])
     return (
         <div className="navbar container-fluid" style={themes}>
 
@@ -42,9 +49,13 @@ const Nav = () => {
                         <span></span>
                         <span></span>
                         <span></span>
+
+
+
                     </div>
 
                 </div>
+
         </div>
     );
 };

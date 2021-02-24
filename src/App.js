@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 import Loading from "./components/page/loading/Loading";
 import Footer from "./components/page/footer/Footer";
+import Menu from "./components/page/menu/Menu";
 function App() {
     const Nav = React.lazy(() => import('./components/page/nav/Nav'));
     const Home = React.lazy(() => import('./components/page/home/Home'));
@@ -24,6 +25,7 @@ function App() {
                 <Provider store={store}>
 
                     <Nav/>
+                    <Menu/>
                     <Switch>
                         <Route path="/" exact component={Home}/>
                         <Route path="/cart" component={Cart}/>
