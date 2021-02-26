@@ -1,0 +1,112 @@
+.register {
+    padding-top: 100px;
+    color: var(--white);
+    padding-bottom: 30px;
+}
+
+.register__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--main);
+    padding: 30px 15px
+}
+
+.rocket{
+    position: relative;
+    margin: 30px auto;
+    animation: bounceUp 2s infinite ;
+}
+
+@keyframes bounceUp {
+    0%, 20%, 50%, 80%, 100% {
+
+        transform: translateY(0);
+    }
+    40% {
+
+        transform: translateY(-30px);
+    }
+    60% {
+
+        transform: translateY(-15px);
+    }
+}
+
+.register__title {
+    padding: 15px 0;
+
+}
+
+.register__content {
+    text-align: center;
+}
+
+.btn-login {
+    margin-top: 50px;
+    width: max-content;
+    padding: 6px 30px;
+    color:var(--main);
+    border:1px solid var(--main);
+    transition: all .2s linear;
+}
+.btn-login:hover{
+
+}
+.register__right {
+
+}
+
+.select-subject {
+
+}
+
+.employee {
+
+}
+
+.Hirer {
+
+}
+.form-title{
+    margin: 30px 0;
+    text-align: center;
+    text-transform: capitalize;
+
+}
+select.form-control, input.form-control{
+    border: 1px solid var(--main) ;
+    border-radius: 0;
+}
+select.form-control:focus, input.form-control:focus{
+    border-color: var(--main);
+    box-shadow: 0 0 0 0.2rem rgba(64,160,60,.3);
+}
+label span{
+    display: inline-block;
+    padding: 10px;
+}
+
+input[type=radio] {
+    border: 5px solid #0DFF92;
+}
+
+input[type=radio]:checked {
+    background: #0DFF92;
+}
+.submit-register{
+padding-top:10px ;
+}
+.btn-register{
+    background: var(--main);
+    color: var(--white);
+    outline: none;
+    border: 1px solid var(--main);
+    padding: 5px 8px;
+    transition: all .2s linear;
+}
+.btn-register:hover{
+    background: var(--white);
+    color: var(--main);
+}

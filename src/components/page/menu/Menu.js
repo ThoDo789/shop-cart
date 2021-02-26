@@ -1,25 +1,24 @@
 import React,{useState} from 'react';
-import {Link,NavLink} from "react-router-dom";
+import {NavLink,Link} from "react-router-dom";
 import './menu.css'
-import {IoMdClose} from "react-icons/all";
 import {useSelector} from "react-redux";
+import {AiOutlineShoppingCart} from "react-icons/all";
 
-const Menu = () => {
-    const {showHide} =useSelector(state=>state.ProductReducer)
 
-    console.log(showHide)
+
+const Menu = (props) => {
+const {themes} = useSelector(state=>state.ProductReducer)
+
 
     return (
-                    <div className={showHide===false? "menu" :"menu menu-open"} >
-
-                        <ul className="menu__list" >
-                            <li className="menu__item"><NavLink to="/" className="menu__link">Home</NavLink></li>
-                            <li className="menu__item"><NavLink to="/" className="menu__link">Contact</NavLink></li>
-                            <li className="menu__item"><NavLink to="/" className="menu__link">Register</NavLink></li>
-                            <li className="menu__item"><NavLink to="/admin" className="menu__link">Admin</NavLink></li>
-                        </ul>
-                    </div>
-
+        <div className="menu pc row"  >
+            <ul className="menu__list pc col-lg-11" style={themes}>
+                <li className="menu__item pc "><NavLink exact to="/" className="menu__link pc" activeClassName="active">Home</NavLink></li>
+                <li className="menu__item pc"><NavLink to="/contact" className="menu__link pc">Contact</NavLink></li>
+                <li className="menu__item pc"><NavLink to="/register" className="menu__link pc">Register</NavLink></li>
+                <li className="menu__item pc"><NavLink to="/admin" className="menu__link pc">Admin</NavLink></li>
+            </ul>
+        </div>
 
 
     );

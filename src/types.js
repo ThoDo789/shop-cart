@@ -18,3 +18,4 @@ export const DECREMENT = 'DECREMENT'
 export const REMOVE = 'REMOVE'
 
 export const SHOW_HIDE_MENU = 'SHOW_HIDE_MENU'
+export const HIDE_MENU = 'HIDE_MENU'

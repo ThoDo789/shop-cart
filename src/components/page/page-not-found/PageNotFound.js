@@ -1,9 +1,9 @@
 import React from 'react';
-
+import './pageNotFound.css'
 const PageNotFound = () => {
     return (
-        <div style={{paddingTop:'100px'}}>
-            <h1>Oop... Page Not Found!!</h1>
+        <div className="page-not-found">
+            <h2 className="page-title">Oop... Page Not Found!!</h2>
         </div>
     );
 };

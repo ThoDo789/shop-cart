@@ -30,16 +30,17 @@ const Home = () => {
         <div style={themes}>
             <Header/>
             <div className="container mtb-30">
-                <Sort/>
+                {productList.length <= 0 ? '' : <Sort/>}
                 <div className="row">
                     {productList.length <= 0 ?
                         <span className="not-found">do not found product</span> : productList.map(product => (
                             <div className="col-lg-3 col-md-6 col-sm-6" id="el" key={product.id}>
+
                                 <div className="product row">
                                     <div className="product__img col-12 " data-aos="fade-up" data-aos-delay="50">
-                                        <div onClick={() => onNextDetail(product.id)}>
-                                            <img src={`/images/${product.image}`} alt="image name"/>
-                                        </div>
+
+                                            <img src={`/images/${product.image}`} alt="image name" onClick={() => onNextDetail(product.id)}/>
+
                                     </div>
                                     <div className="product__name col-12" data-aos="fade-up" data-aos-delay="10">
                                         {product.name}

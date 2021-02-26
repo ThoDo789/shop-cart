@@ -1,5 +1,5 @@
 import {
-    DARK_MODE,
+    DARK_MODE, HIDE_MENU,
     PRODUCT,
     SEARCH_KEY,
     SHOW_HIDE_MENU,
@@ -192,7 +192,7 @@ const ProductReducer = (state = initState, action) => {
             }
         case DARK_MODE:
             const light = {background: '#2c2c2c', color: '#fff'}
-            const dark = {background: "#fff", color: "#2c2c2c"}
+            const dark = {background: "#fdfcfc", color: "#2c2c2c"}
             return {
                 ...state,
                 status: action.payload,
@@ -246,11 +246,8 @@ const ProductReducer = (state = initState, action) => {
                 ...state,
                 products: priceDec
             }
-        case SHOW_HIDE_MENU:
-            return {
-                ...state,
-                showHide: action.payload
-            }
+
+
 
         default:
             return state

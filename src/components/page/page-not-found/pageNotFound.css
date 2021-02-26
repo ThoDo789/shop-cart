@@ -1,0 +1,7 @@
+.page-not-found{
+    padding-top: 100px;
+}
+.page-title{
+    font-size: 2.5rem;
+    height: calc(100vh - 5em);
+}

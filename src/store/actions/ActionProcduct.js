@@ -1,5 +1,5 @@
 import {
-    DARK_MODE,
+    DARK_MODE, HIDE_MENU,
     PRODUCT,
     SEARCH_KEY,
     SHOW_HIDE_MENU,
@@ -49,11 +49,5 @@ export const sortPriceDec =(value)=>{
     return{
         type:SORT_PRICE_DEC,
         payload: value
-    }
-}
-export const status =(st)=>{
-    return{
-        type:SHOW_HIDE_MENU,
-        payload:st
     }
 }

@@ -19,8 +19,8 @@ const Cart = () => {
                 {products.length > 0 ?
                     <> <span className="qty-title row"><span className="col-12">your cart have {totalQuantities} products</span></span>
                         <div className="row">
-                            <div className="col-lg-9 col-md-9 col-sm-12">
-                                <div className="cart__heading d-none d-sm-block">
+                            <div className="col-lg-9 col-md-6 col-sm-12">
+                                <div className="cart__heading d-md-none d-sm-block">
                                     <div className="row">
                                         <div className="col-2">
                                             <p className="">Picture</p>
@@ -44,22 +44,22 @@ const Cart = () => {
                                 </div>
                                 {products.map(product => (
                                     <div className="row text" key={product.id}>
-                                        <div className="col-lg-2 col-md-2 col-sm-12">
+                                        <div className="col-lg-2 col-md-12 col-sm-12">
                                             <div className="cart__image">
                                                 <img src={`/images/${product.image}`} alt="image"/>
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2 col-sm-12">
-                                            <div className="car__name">
+                                        <div className="col-lg-2 col-md-12 col-sm-12">
+                                            <div className="car__name pt-md-2">
                                                 {product.name}
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2 col-sm-12">
+                                        <div className=" pt-md-3 col-lg-2 col-md-4 col-sm-12">
                                             <div className="car__price">
                                                 {currencyFormatter.format((product.price - product.discount/100 * product.price)  , {code: 'USD'})}
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2 col-sm-12">
+                                        <div className=" pt-md-3 col-lg-2 col-md-4 col-sm-12">
                                             <div className="row">
                                                 <div className="detail__info col-12 ">
                                                     <div className="detail__incDec">
@@ -70,12 +70,12 @@ const Cart = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2 col-sm-12">
+                                        <div className=" pt-md-3 col-lg-2 col-md-4 col-sm-12">
                                             <div className="car__total">
                                                 {currencyFormatter.format( (product.price - product.discount/100 * product.price)*product.quantity , {code: 'USD'})}
                                             </div>
                                         </div>
-                                        <div className="col-lg-2 col-md-2 col-sm-12 d-block d-sm-none d-md-block">
+                                        <div className=" pt-md-2 col-lg-2 col-md-12 col-sm-12 d-block d-sm-none d-md-block">
                                             <div className="cart__remove" onClick={()=>dispatch(removeItemCart(product.id))}>
                                                 <BsXSquare/>
                                             </div>
@@ -84,23 +84,23 @@ const Cart = () => {
                                 ))}
 
                             </div>
-                            <div className="col-lg-3 col-md-2 col-sm-12">
-                                    <div className="summery">
-                                        <div className="summary__heading">
+                            <div className="col-lg-3 col-md-6 col-sm-12">
+                                    <div className="summery row">
+                                        <div className="summary__heading col-12">
                                             Summary
                                         </div>
                                         <div className="summary__details ">
                                             <div className="row">
-                                                <div className="col-6">
+                                                <div className="col-8">
                                                     Total items:
                                                 </div>
-                                                <div className="col-6">{totalQuantities}</div>
+                                                <div className="col-4">{totalQuantities}</div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-6">
+                                                <div className="col-8">
                                                     Total price:
                                                 </div>
-                                                <div className="col-6">
+                                                <div className="col-4">
                                                     {currencyFormatter.format( totalPrice, {code: 'USD'})}
 
                                                 </div>
