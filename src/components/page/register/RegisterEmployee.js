@@ -13,16 +13,21 @@ const RegisterEmployee = () => {
                     <input type="text" className="form-control" placeholder="First Name"/>
                 </div>
                 <div className="form-group col-lg-6">
-                    <input type="text" className="form-control " placeholder="Your-Email"/>
-                </div>
-                <div className="form-group col-lg-6">
                     <input type="text" className="form-control " placeholder="Last Name"/>
                 </div>
+
+                <div className="form-group col-lg-6">
+                    <input type="text" className="form-control " placeholder="Your-Email"/>
+                </div>
+
                 <div className="form-group col-lg-6">
                     <input type="text" className="form-control " placeholder="Your Phone"/>
                 </div>
                 <div className="form-group col-lg-6">
                     <input type="text" className="form-control " placeholder="Password"/>
+                </div>
+                <div className="form-group col-lg-6">
+                    <input type="text" className="form-control " placeholder="Confirm-Password"/>
                 </div>
                 <div className="form-group col-lg-6">
                     <select className="form-control ">
@@ -31,9 +36,7 @@ const RegisterEmployee = () => {
                         <option>Large select</option>
                     </select>
                 </div>
-                <div className="form-group col-lg-6">
-                    <input type="text" className="form-control " placeholder="Confirm-Password"/>
-                </div>
+
                 <div className="form-group col-lg-6">
                     <input type="text" className="form-control " placeholder="Your Answer"/>
                 </div>

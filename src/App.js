@@ -1,4 +1,4 @@
-import React, {Suspense} from "react"
+import React, {Suspense,useState} from "react"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from "./store/store";
@@ -11,8 +11,8 @@ import Footer from "./components/page/footer/Footer";
 import Map from "./components/page/map/Map";
 const Nav = React.lazy(() => import('./components/page/nav/Nav'));
 const Home = React.lazy(() => import('./components/page/home/Home'));
-const Cart = React.lazy(() => import('./components/feature/cart/Cart'));
-const Details = React.lazy(() => import('./components/feature/details/Details'));
+const Cart = React.lazy(() => import('./components/page/cart/Cart'));
+const Details = React.lazy(() => import('./components/page/details/Details'));
 const User = React.lazy(() => import('./components/feature/User'));
 const PageNotFound = React.lazy(() => import('./components/page/page-not-found/PageNotFound'));
 const Contact = React.lazy(() => import('./components/page/contact/Contact'));
@@ -29,7 +29,7 @@ function App() {
             <Suspense fallback={<Loading/>}>
                 <Provider store={store}>
 
-                    <Nav/>
+                    <Nav />
 
                     <Switch>
 

@@ -11,12 +11,15 @@ const Map = () => {
             zoom: 13
         }
     );
-    console.log(map); // instance of created Map object (https://developers.google.com/maps/documentation/javascript/reference/map)
-    console.log(google); // google API object (easily get google.maps.LatLng or google.maps.Marker or any other Google Maps class)
+    // console.log(map); // instance of created Map object (https://developers.google.com/maps/documentation/javascript/reference/map)
+    // console.log(google); // google API object (easily get google.maps.LatLng or google.maps.Marker or any other Google Maps class)
 
     return (
-        <div className="map-google">
-            <div ref={ref} style={{width: "100vw", height:"30vh"}}/>
+        <div className="map-google container-fluid">
+            <div className="row">
+                <div ref={ref} className="col-12" style={{width: "100vw", height:"30vh"}}/>
+            </div>
+
         </div>
 
     );

@@ -1,28 +1,30 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {AiOutlineShoppingCart} from "react-icons/all";
 import {Link, useHistory} from "react-router-dom";
-import {Provider, useDispatch, useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import './nav.css'
 import Search from "../../feature/seacrh/Search";
 import DarkLightThemes from "../../feature/darkmode/DarkLightThemes";
 import MenuMobile from "../menu/MenuMobile";
 import Menu from "../menu/Menu";
+import {showHideMenu} from "../../../store/actions/ActionProcduct";
 
 
 const Nav = () => {
 
     const {totalQuantities} = useSelector(state => state.CartReducer)
-    const {themes} = useSelector(state => state.ProductReducer)
-    const [trigger, setTrigger] = useState(false)
+    const {themes,showHide} = useSelector(state => state.ProductReducer)
+
     const history = useHistory()
 
     const backHome = () => {
         window.scroll(0, 0)
         history.push('/')
     }
+    const dispatch = useDispatch()
     const onMenuMobile = () => {
-        setTrigger(!trigger)
 
+        console.log(dispatch(showHideMenu()))
     }
 
     return (
@@ -38,7 +40,7 @@ const Nav = () => {
                 </div>
 
                     <DarkLightThemes/>
-                    <Search/>
+                    <Search />
 
 
                 <div className="nav__right">
@@ -54,13 +56,13 @@ const Nav = () => {
 
                 <div className="menu-nav">
                     <div id="nav-icon1" onClick={onMenuMobile}
-                         className={trigger === true ? 'open d-lg-none d-md-block d-sm-block' : 'd-lg-none d-md-block d-sm-block'}>
+                         className={showHide === false ? 'open d-lg-none d-md-block d-sm-block' : 'd-lg-none d-md-block d-sm-block'}>
                         <span></span>
                         <span></span>
                         <span></span>
 
                     </div>
-                    <MenuMobile showHide={trigger}/>
+                    <MenuMobile/>
                 </div>
 
 

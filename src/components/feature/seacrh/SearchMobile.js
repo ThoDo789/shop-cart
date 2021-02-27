@@ -15,16 +15,20 @@ const Search = () => {
     const onHandlerSearch =(e)=>{
 
         setName(e.target.name=e.target.value)
+        if(!name) return
+        dispatch(searchList(name))
+
 
     }
     const onSubmit =(e)=>{
 
         e.preventDefault()
 
-       dispatch(searchList(name))
-
+        dispatch(searchList(name))
         window.scroll(0,800)
         history.push("/")
+
+
     }
 
     return (

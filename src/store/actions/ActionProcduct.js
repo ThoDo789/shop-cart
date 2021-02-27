@@ -21,10 +21,10 @@ export const searchList =(name)=>{
         payload:name
     }
 }
-export const DarkMode =(status)=>{
+export const DarkMode =()=>{
     return {
         type:DARK_MODE,
-        payload:status
+
     }
 }
 export const sortNameAZ =()=>{
@@ -49,5 +49,18 @@ export const sortPriceDec =(value)=>{
     return{
         type:SORT_PRICE_DEC,
         payload: value
+    }
+}
+export const showHideMenu =()=>{
+    return{
+        type:SHOW_HIDE_MENU,
+
+    }
+}
+export const hideMenu =()=>{
+    return{
+        type:HIDE_MENU,
+
+
     }
 }

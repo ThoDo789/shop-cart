@@ -14,6 +14,7 @@ body, html {
     position: relative;
     background-color: white;
 
+
 }
 
 :root {
@@ -30,45 +31,57 @@ body, html {
     .detail__info {
         justify-content: center;
     }
-    .btn-default{
+
+    .btn-default {
         width: 180px;
     }
-    .detail__img{
+
+    .detail__img {
         height: 100%;
+    }
+    .cart__heading{
+        display: none;
     }
     .empty-card__img {
         height: auto;
         padding-bottom: 2px;
 
     }
-.d-sm-none.d-md-flex.search{
+
+    .d-sm-none.d-md-flex.search {
         display: none;
     }
-    .menu.pc.row{
-        display: none ;
+
+    .menu.pc.row {
+        display: none;
     }
 
 }
 
 /*// Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767.98px) {
-        .tablet{
-            display: flex;
-        }
-        .detail__info {
+    .tablet {
+        display: flex;
+    }
+
+    .detail__info {
         justify-content: center;
-        }
-         .btn-default{
+    }
+
+    .btn-default {
         min-width: 180px;
-        }
-    .detail__img{
+    }
+
+    .detail__img {
         height: 100%;
     }
-    .d-sm-none.d-md-flex.search{
+
+    .d-sm-none.d-md-flex.search {
         display: none;
     }
-    .menu.pc.row{
-        display: none ; ;
+
+    .menu.pc.row {
+        display: none;;
     }
 
 
@@ -77,15 +90,18 @@ body, html {
 /*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
 
-    .detail__img{
+    .detail__img {
         height: calc(100vh - 8em);
     }
-    .d-sm-none.d-md-flex.search{
+
+    .d-sm-none.d-md-flex.search {
         display: none !important;
     }
-    .menu.pc.row{
-        display: none ; ;
+
+    .menu.pc.row {
+        display: none;;
     }
+
     .summery {
         position: fixed;
     }
@@ -96,10 +112,11 @@ body, html {
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
 
-    .detail__name,.detail__price {
+    .detail__name, .detail__price {
         text-align: center;
     }
-    .detail__img{
+
+    .detail__img {
         height: calc(100vh - 8em);
     }
 
@@ -111,11 +128,12 @@ body, html {
 /*// Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 
-    .detail__name,.detail__price {
+    .detail__name, .detail__price {
         text-align: left;
     }
-    .detail__incDec{
-    justify-content: flex-start;
+
+    .detail__incDec {
+        justify-content: flex-start;
     }
 
 }

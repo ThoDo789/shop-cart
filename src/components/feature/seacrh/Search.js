@@ -6,6 +6,7 @@ import {searchList} from "../../../store/actions/ActionProcduct";
 import './search.css'
 const Search = () => {
 
+
     const history = useHistory()
 
     const dispatch=useDispatch()
@@ -14,15 +15,16 @@ const Search = () => {
 
     const onHandlerSearch =(e)=>{
 
+
         setName(e.target.name=e.target.value)
 
+        dispatch(searchList(name))
+
+       
     }
     const onSubmit =(e)=>{
 
         e.preventDefault()
-
-       dispatch(searchList(name))
-
         window.scroll(0,800)
         history.push("/")
     }
@@ -30,7 +32,7 @@ const Search = () => {
     return (
         <Fragment >
             <form className="search d-lg-flex d-sm-none d-md-flex "
-                                            onSubmit={onSubmit}
+                  onSubmit={onSubmit}
             >
                 <input type="text"
                        placeholder="Search..."

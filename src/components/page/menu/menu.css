@@ -10,12 +10,14 @@
     text-align: center;
     overflow: hidden;
     transition: all .3s ease-in-out;
+    min-height: 0;
 
 
 }
 
 .menu-open {
     height: 50vh;
+    min-height: 328px;
 
 }
 
@@ -77,7 +79,7 @@ a.menu__link{
 
 .menu__item.pc {
     margin: 0;
-    padding-right:15px;
+
 
 }
 

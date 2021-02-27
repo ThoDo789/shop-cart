@@ -1,73 +1,16 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import Header from "../header/Header";
 import {useSelector} from "react-redux";
-import currencyFormatter from "currency-formatter";
-import {useHistory} from "react-router-dom";
 import './home.css'
-import AOS from "aos"
 import 'aos/dist/aos.css';
-import Sort from "../../feature/sort/Sort";
+import ProductList from "../../feature/product-list/ProductList";
 
 const Home = () => {
-
-    AOS.init()
-
-    const {products, key, themes} = useSelector(state => state.ProductReducer)
-
-
-    const productList = products.filter(pr => {
-
-        return pr.name.includes(key.toLowerCase())
-    })
-
-    const history = useHistory()
-    const onNextDetail = (id) => {
-        console.log(id)
-        window.scroll(0, 0)
-        history.push(`/detail/${id}`)
-    }
+    const { themes} = useSelector(state => state.ProductReducer)
     return (
-        <div style={themes}>
+        <div  style={themes}>
             <Header/>
-            <div className="container mtb-30">
-                {productList.length <= 0 ? '' : <Sort/>}
-                <div className="row">
-                    {productList.length <= 0 ?
-                        <span className="not-found">do not found product</span> : productList.map(product => (
-                            <div className="col-lg-3 col-md-6 col-sm-6" id="el" key={product.id}>
-
-                                <div className="product row">
-                                    <div className="product__img col-12 " data-aos="fade-up" data-aos-delay="50">
-
-                                            <img src={`/images/${product.image}`} alt="image name" onClick={() => onNextDetail(product.id)}/>
-
-                                    </div>
-                                    <div className="product__name col-12" data-aos="fade-up" data-aos-delay="10">
-                                        {product.name}
-                                    </div>
-                                    <div className="col-12" data-aos="fade-up" data-aos-delay="10">
-                                        <div className="row">
-                                            <div className="col-12 price">
-                                                <div className="product__price">
-                                                    <div className="actual-price">
-                                                        {currencyFormatter.format(product.price, {code: 'USD'})}
-                                                    </div>
-                                                    <span
-                                                        className="product__discount--percent">{product.discount}%</span>
-                                                </div>
-                                                <div className="product__discount--price">
-                                                    {currencyFormatter.format((product.price - product.discount / 100 * product.price), {code: 'USD'})}
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-
-                </div>
-            </div>
+            <ProductList/>
         </div>
     );
 };

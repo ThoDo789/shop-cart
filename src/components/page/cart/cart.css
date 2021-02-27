@@ -90,10 +90,17 @@
 .summary__details {
     background-color: var(--main);
     color: var(--white);
-    padding: 20px;
+    padding: 15px;
     width: max-content;
-    min-width: 100%;
-    margin-top: 30px;
+
+
+}
+total span {
+    padding: 5px;
+}
+
+.col-12.total {
+    display: inline-block;
 }
 
 .checkout {

@@ -186,6 +186,7 @@ const ProductReducer = (state = initState, action) => {
                 product: state.products.find(product => product.id === parseInt(action.id))
             }
         case SEARCH_KEY:
+
             return {
                 ...state,
                 key: action.payload
@@ -195,8 +196,8 @@ const ProductReducer = (state = initState, action) => {
             const dark = {background: "#fdfcfc", color: "#2c2c2c"}
             return {
                 ...state,
-                status: action.payload,
-                themes: action.payload === true ? light : dark
+                status: !state.status,
+                themes: state.status === true ? light : dark
 
             }
         // -------SORT---------
@@ -247,7 +248,17 @@ const ProductReducer = (state = initState, action) => {
                 products: priceDec
             }
 
+        case SHOW_HIDE_MENU:
+            return {
+                ...state,
+                showHide: !state.showHide
 
+            }
+        case HIDE_MENU:
+            return {
+                ...state,
+                showHide: !action.showHide
+            }
 
         default:
             return state
