@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useRef} from 'react';
 import {useSelector} from "react-redux";
 import currencyFormatter from "currency-formatter";
 import {useHistory} from "react-router-dom";
@@ -10,7 +10,6 @@ const ProductList = () => {
     AOS.init()
 
     const {products, key} = useSelector(state => state.ProductReducer)
-
 
     const productList = useMemo(() => {
         if (!key) return products
@@ -40,7 +39,8 @@ const ProductList = () => {
                             <div className="product row">
                                 <div className="product__img col-12 " data-aos="fade-up" data-aos-delay="50">
 
-                                    <img src={`/images/${product.image}`} alt="image name"
+                                    <img src={`/images/${product.image}`}
+                                         alt="image name"
                                          onClick={() => onNextDetail(product.id)}/>
 
                                 </div>

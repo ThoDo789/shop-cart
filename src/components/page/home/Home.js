@@ -5,8 +5,10 @@ import './home.css'
 import 'aos/dist/aos.css';
 import ProductList from "../../feature/product-list/ProductList";
 
-const Home = () => {
-    const { themes} = useSelector(state => state.ProductReducer)
+const Home = (props) => {
+    const {key} =props
+    console.log(key)
+    const {themes} = useSelector(state => state.ProductReducer)
     return (
         <div  style={themes}>
             <Header/>

@@ -10,10 +10,11 @@ import Menu from "../menu/Menu";
 import {showHideMenu} from "../../../store/actions/ActionProcduct";
 
 
-const Nav = () => {
-
+const Nav = (props) => {
+    const {key} = props
+    console.log(key)
     const {totalQuantities} = useSelector(state => state.CartReducer)
-    const {themes,showHide} = useSelector(state => state.ProductReducer)
+    const {themes, showHide} = useSelector(state => state.ProductReducer)
 
     const history = useHistory()
 
@@ -26,21 +27,21 @@ const Nav = () => {
 
         console.log(dispatch(showHideMenu()))
     }
-
+    const keySearch = (key) => {
+        keySearch(key)
+    }
     return (
         <div className="navbar container-fluid" style={themes}>
 
             <div className="nav__container row">
-
-
 
                 <div className="nav__left">
                     <button className="btn-home" onClick={backHome} type="button"><img src="/images/logo.webp" alt=""/>
                     </button>
                 </div>
 
-                    <DarkLightThemes/>
-                    <Search />
+                <DarkLightThemes/>
+                <Search keySearch={keySearch}/>
 
 
                 <div className="nav__right">

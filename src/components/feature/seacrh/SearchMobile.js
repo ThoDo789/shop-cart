@@ -1,30 +1,33 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useRef, useState} from 'react';
 import {BsSearch} from "react-icons/all";
 import {useHistory, useLocation} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {searchList} from "../../../store/actions/ActionProcduct";
 import './search.css'
-const Search = () => {
+const Search = (props) => {
 
     const history = useHistory()
 
     const dispatch=useDispatch()
 
     const [name,setName] = useState('')
+    const typingTimeRef = useRef(null)
 
     const onHandlerSearch =(e)=>{
 
         setName(e.target.name=e.target.value)
-        if(!name) return
-        dispatch(searchList(name))
+
+        dispatch(searchList(e.target.name=e.target.value))
+        window.scroll(0,800)
 
 
     }
+
     const onSubmit =(e)=>{
 
         e.preventDefault()
 
-        dispatch(searchList(name))
+        dispatch(searchList(e.target.name=e.target.value))
         window.scroll(0,800)
         history.push("/")
 

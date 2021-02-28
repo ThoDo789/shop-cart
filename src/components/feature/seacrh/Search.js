@@ -17,14 +17,14 @@ const Search = () => {
 
 
         setName(e.target.name=e.target.value)
-
-        dispatch(searchList(name))
-
+        dispatch(searchList(e.target.name=e.target.value))
+        window.scroll(0,800)
        
     }
     const onSubmit =(e)=>{
 
         e.preventDefault()
+        dispatch(searchList(e.target.name=e.target.value))
         window.scroll(0,800)
         history.push("/")
     }

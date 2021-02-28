@@ -1,4 +1,4 @@
-import React, {Suspense,useState} from "react"
+import React, {Suspense, useState} from "react"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from "./store/store";
@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Loading from "./components/page/loading/Loading";
 import Footer from "./components/page/footer/Footer";
 import Map from "./components/page/map/Map";
+
 const Nav = React.lazy(() => import('./components/page/nav/Nav'));
 const Home = React.lazy(() => import('./components/page/home/Home'));
 const Cart = React.lazy(() => import('./components/page/cart/Cart'));
@@ -18,10 +19,16 @@ const PageNotFound = React.lazy(() => import('./components/page/page-not-found/P
 const Contact = React.lazy(() => import('./components/page/contact/Contact'));
 const Register = React.lazy(() => import('./components/page/register/Register'));
 const Admin = React.lazy(() => import('./components/page/admin/Admin'));
-const  RegisterEmployee = React.lazy(() => import('./components/page/register/RegisterEmployee'));
-const  RegisterHirer = React.lazy(() => import('./components/page/register/RegisterHirer'));
+const RegisterEmployee = React.lazy(() => import('./components/page/register/RegisterEmployee'));
+const RegisterHirer = React.lazy(() => import('./components/page/register/RegisterHirer'));
 
 function App() {
+    const [key, setKey] = useState('thhhhhh')
+    const keySearch = (key) => {
+            setKey(key)
+    }
+    console.log(key)
+
 
     return (
 
@@ -29,14 +36,14 @@ function App() {
             <Suspense fallback={<Loading/>}>
                 <Provider store={store}>
 
-                    <Nav />
+                    <Nav keySearchApp={keySearch}/>
 
                     <Switch>
 
-                        <Route path="/" exact component={Home}/>
+                        <Route path="/" exact render={(props) => (<Home {...props} key={keySearch} />)}/>
                         <Route path="/cart" component={Cart}/>
                         <Route path="/detail/:id" exact component={Details}/>
-                        <Route path="/user"  component={User}/>
+                        <Route path="/user" component={User}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/register" component={Register}/>
                         <Route path="/admin" component={Admin}/>
