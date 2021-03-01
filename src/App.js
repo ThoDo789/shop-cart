@@ -18,16 +18,10 @@ const User = React.lazy(() => import('./components/feature/User'));
 const PageNotFound = React.lazy(() => import('./components/page/page-not-found/PageNotFound'));
 const Contact = React.lazy(() => import('./components/page/contact/Contact'));
 const Register = React.lazy(() => import('./components/page/register/Register'));
-const Admin = React.lazy(() => import('./components/page/admin/Admin'));
-const RegisterEmployee = React.lazy(() => import('./components/page/register/RegisterEmployee'));
-const RegisterHirer = React.lazy(() => import('./components/page/register/RegisterHirer'));
+const Admin = React.lazy(() => import('./components/admin/Admin'));
 
 function App() {
-    const [key, setKey] = useState('thhhhhh')
-    const keySearch = (key) => {
-            setKey(key)
-    }
-    console.log(key)
+
 
 
     return (
@@ -36,11 +30,11 @@ function App() {
             <Suspense fallback={<Loading/>}>
                 <Provider store={store}>
 
-                    <Nav keySearchApp={keySearch}/>
+                    <Nav />
 
                     <Switch>
 
-                        <Route path="/" exact render={(props) => (<Home {...props} key={keySearch} />)}/>
+                        <Route path="/" exact component={Home}/>
                         <Route path="/cart" component={Cart}/>
                         <Route path="/detail/:id" exact component={Details}/>
                         <Route path="/user" component={User}/>

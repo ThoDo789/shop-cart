@@ -19,6 +19,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    cursor: pointer
 }
 
 .product__img img {

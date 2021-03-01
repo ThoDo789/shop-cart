@@ -1,7 +1,8 @@
 .header {
-    background: url("../../../images/banner.webp") no-repeat;
+    background: url("../../../images/banner1.jpg") no-repeat;
     background-size: cover;
     width: 100%;
     height: 80vh;
     background-position-x: 35%;
+
 }

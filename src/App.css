@@ -13,6 +13,7 @@ body, html {
     height: 100%;
     position: relative;
     background-color: white;
+    scroll-behavior: smooth;
 
 
 }
@@ -20,8 +21,8 @@ body, html {
 :root {
     --white: #fff;
     --black: #000;
-    --main: #40a03c;
-    --rgba-main: rgba(64, 160, 60, 0.5)
+    --main: #8b60c8;
+    --rgba-main: rgba(206, 62, 64, 0.5)
 }
 
 /*#ff6868  rgba(255,104,104,.7)*/

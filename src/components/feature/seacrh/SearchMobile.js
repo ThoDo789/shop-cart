@@ -11,7 +11,7 @@ const Search = (props) => {
     const dispatch=useDispatch()
 
     const [name,setName] = useState('')
-    const typingTimeRef = useRef(null)
+
 
     const onHandlerSearch =(e)=>{
 
@@ -27,7 +27,7 @@ const Search = (props) => {
 
         e.preventDefault()
 
-        dispatch(searchList(e.target.name=e.target.value))
+
         window.scroll(0,800)
         history.push("/")
 

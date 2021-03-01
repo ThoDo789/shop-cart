@@ -1,8 +1,9 @@
 import React from 'react';
 import {SiApacherocketmq} from "react-icons/all";
 import './register.css'
-import RegisterEmployee from "./RegisterEmployee";
+
 import {useSelector} from "react-redux";
+import RegisterMember from "./RegisterMember";
 
 const Register = () => {
     const {themes} = useSelector(state => state.ProductReducer)
@@ -27,8 +28,7 @@ const Register = () => {
                       <div className="row">
                           <div className="select-subject col-lg-12">
 
-
-                                  <RegisterEmployee/>
+                                  <RegisterMember/>
 
                           </div>
 

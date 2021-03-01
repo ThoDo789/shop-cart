@@ -10,9 +10,9 @@ import Menu from "../menu/Menu";
 import {showHideMenu} from "../../../store/actions/ActionProcduct";
 
 
-const Nav = (props) => {
-    const {key} = props
-    console.log(key)
+const Nav = () => {
+
+
     const {totalQuantities} = useSelector(state => state.CartReducer)
     const {themes, showHide} = useSelector(state => state.ProductReducer)
 

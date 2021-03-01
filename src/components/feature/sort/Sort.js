@@ -10,7 +10,7 @@ const Sort = () => {
     const [value, setValue] = useState('A-Z')
     const [active, setActive] = useState(true)
 
-
+console.log(products)
     const onHandleToggle = () => {
         setActive(!active)
     }
