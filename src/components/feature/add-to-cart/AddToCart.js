@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom"
+import {useHistory, useParams} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux";
 import {BsDash, BsPlus} from "react-icons/all";
 import {productList} from "../../../store/actions/ActionProcduct";
@@ -13,7 +13,7 @@ const AddToCart = () => {
 
     const {product} = useSelector(state => state.ProductReducer)
 
-
+    const history = useHistory()
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -29,6 +29,7 @@ const AddToCart = () => {
 
     const onAddToCart = () => {
         dispatch(addToCart(product, quantity))
+        history.push("/cart")
     }
 
 

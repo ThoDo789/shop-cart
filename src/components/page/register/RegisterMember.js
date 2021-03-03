@@ -1,14 +1,14 @@
-import React, {useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup'
 import * as Yup from 'yup';
 import axios from 'axios'
-import {string} from "yup";
+import userApi from "../../api/userApi";
 
 const RegisterMember = () => {
     const {themes} = useSelector(state => state.ProductReducer)
-
+    const [userList ,setUserList] = useState([])
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
     const validationSchema = Yup.object().shape({
 
@@ -32,10 +32,10 @@ const RegisterMember = () => {
         confirmPassword: Yup.string()
             .oneOf([Yup.ref('password'), null], 'Passwords must match')
             .required('Confirm Password is required'),
-        question:Yup.string()
+        question: Yup.string()
             .required("Question is required")
         ,
-        answer:Yup.string()
+        answer: Yup.string()
             .required("Answer is required")
         ,
 
@@ -44,6 +44,16 @@ const RegisterMember = () => {
 
     const onSubmit = async data => {
 
+        console.log(data)
+        try{
+            const response = await userApi.post(data);
+            console.log(response)
+            setUserList(response.data)
+        }catch (error){
+            console.log('error')
+        }
+
+
     }
     return (
 
@@ -51,7 +61,7 @@ const RegisterMember = () => {
             <form action="" className="row" onSubmit={handleSubmit(onSubmit)}>
 
                 <h3 className="form-title col-lg-12">Apply as a member</h3>
-                <div className="form-group  col-lg-6">
+                <div className="form-group  col-lg-6 col-md-6">
                     <input type="text"
                            className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
                            placeholder="First Name"
@@ -60,7 +70,7 @@ const RegisterMember = () => {
                     />
                     <div className="invalid-feedback">{errors.firstName?.message}</div>
                 </div>
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <input type="text"
                            className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
                            placeholder="Last Name"
@@ -70,7 +80,7 @@ const RegisterMember = () => {
                     <div className="invalid-feedback">{errors.lastName?.message}</div>
                 </div>
 
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <input type="email"
                            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                            placeholder="Your-Email"
@@ -80,7 +90,7 @@ const RegisterMember = () => {
                     <div className="invalid-feedback">{errors.email?.message}</div>
                 </div>
 
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <input type="number"
                            className={`form-control ${errors.phoneNumber ? 'is-invalid' : ''}`}
                            placeholder="Your Phone"
@@ -90,7 +100,7 @@ const RegisterMember = () => {
                     />
                     <div className="invalid-feedback">{errors.phoneNumber?.message}</div>
                 </div>
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <input type="password"
                            className={`form-control ${errors.password ? 'is-invalid' : ''}`}
                            placeholder="Password"
@@ -99,7 +109,7 @@ const RegisterMember = () => {
                     />
                     <div className="invalid-feedback">{errors.password?.message}</div>
                 </div>
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <input type="password"
                            className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
                            placeholder="Confirm-Password"
@@ -110,7 +120,7 @@ const RegisterMember = () => {
                     <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
 
                 </div>
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <select
                         className={`form-control ${errors.question ? 'is-invalid' : ''}`}
                         ref={register}
@@ -123,7 +133,7 @@ const RegisterMember = () => {
                     <div className="invalid-feedback">{errors.question?.message}</div>
                 </div>
 
-                <div className="form-group col-lg-6">
+                <div className="form-group col-lg-6  col-md-6">
                     <input type="text"
                            className={`form-control ${errors.answer ? 'is-invalid' : ''}`}
                            placeholder="Your Answer"
@@ -136,7 +146,7 @@ const RegisterMember = () => {
 
                 <div className="col-lg-12">
                     <div className="row">
-                        <div className="col-lg-6">
+                        <div className="col-lg-6  col-md-6">
                             <label htmlFor="male"><span>Male</span>
                                 <input type="radio" id="male" name="gender" ref={register} value={true} defaultChecked/>
                             </label>
@@ -145,7 +155,7 @@ const RegisterMember = () => {
                             </label>
 
                         </div>
-                        <div className="col-lg-6 submit-register">
+                        <div className="col-lg-6  col-md-6 submit-register">
                             <button type="submit" className="btn-register">Register</button>
                         </div>
                     </div>

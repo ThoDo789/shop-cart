@@ -36,7 +36,7 @@ const Nav = () => {
             <div className="nav__container row">
 
                 <div className="nav__left">
-                    <button className="btn-home" onClick={backHome} type="button"><img src="/images/logo.webp" alt=""/>
+                    <button className="btn-home" onClick={backHome} type="button"><img src="/images/store-location-logo.svg" alt=""/>
                     </button>
                 </div>
 

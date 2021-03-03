@@ -13,6 +13,7 @@ const MenuMobile = () => {
     const hide=()=>{
 
          console.log(dispatch(hideMenu()))
+        window.scroll(0,0)
     }
 
 
@@ -24,8 +25,7 @@ const MenuMobile = () => {
                 <ul className="menu__list"  onClick={hide}>
                     <li className="menu__item "><Link exact={"true"} to="/" className="menu__link" >Home</Link></li>
                     <li className="menu__item"><Link  to="/contact" className="menu__link" >Contact</Link></li>
-                    <li className="menu__item"><Link  to="/register" className="menu__link" >Register</Link></li>
-                    <li className="menu__item"><Link  to="/admin" className="menu__link" >Admin</Link></li>
+                    <li className="menu__item"><Link  to="/login" className="menu__link" >Login</Link></li>
 
                 </ul>
             </div>

@@ -18,7 +18,7 @@ const User = React.lazy(() => import('./components/feature/User'));
 const PageNotFound = React.lazy(() => import('./components/page/page-not-found/PageNotFound'));
 const Contact = React.lazy(() => import('./components/page/contact/Contact'));
 const Register = React.lazy(() => import('./components/page/register/Register'));
-const Admin = React.lazy(() => import('./components/admin/Admin'));
+const Login = React.lazy(() => import('./components/Login/Login'));
 
 function App() {
 
@@ -40,7 +40,7 @@ function App() {
                         <Route path="/user" component={User}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/register" component={Register}/>
-                        <Route path="/admin" component={Admin}/>
+                        <Route path="/login" component={Login}/>
 
                         <Route component={PageNotFound}/>
 

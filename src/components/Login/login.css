@@ -1,0 +1,23 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    min-height: calc(100vh - 30em);
+}
+.btn-login{
+    background-color: var(--main);
+    color: white;
+    padding: 8px 20px;
+    transition: all .3s linear;
+    border: 1px solid var(--main);
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+.btn-login:hover{
+ background-color: white;
+    color: var(--main);
+
+}

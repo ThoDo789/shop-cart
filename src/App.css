@@ -21,8 +21,8 @@ body, html {
 :root {
     --white: #fff;
     --black: #000;
-    --main: #8b60c8;
-    --rgba-main: rgba(206, 62, 64, 0.5)
+    --main: #606ac8;
+    --rgba-main: rgb(96 106 200)
 }
 
 /*#ff6868  rgba(255,104,104,.7)*/

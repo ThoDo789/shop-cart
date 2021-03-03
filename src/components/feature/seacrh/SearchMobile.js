@@ -1,7 +1,7 @@
 import React, {Fragment, useRef, useState} from 'react';
 import {BsSearch} from "react-icons/all";
 import {useHistory, useLocation} from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {searchList} from "../../../store/actions/ActionProcduct";
 import './search.css'
 const Search = (props) => {
@@ -9,7 +9,7 @@ const Search = (props) => {
     const history = useHistory()
 
     const dispatch=useDispatch()
-
+    const {showHide} = useSelector(state=>state.ProductReducer)
     const [name,setName] = useState('')
 
 

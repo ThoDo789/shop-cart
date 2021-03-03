@@ -95,14 +95,15 @@
 
 
 }
-total span {
-    padding: 5px;
-}
 
-.col-12.total {
-    display: inline-block;
-}
 
+.total {
+    display: flex;
+}
+ .total span{
+     display: block;
+    
+ }
 .checkout {
     position: relative;
 
