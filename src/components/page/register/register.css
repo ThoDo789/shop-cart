@@ -44,6 +44,7 @@
 }
 
 .btn-login {
+    position: relative;
     margin-top: 50px;
     width: max-content;
     padding: 6px 30px;
@@ -51,9 +52,20 @@
     border:1px solid var(--main);
     transition: all .2s linear;
 }
-.btn-login:hover{
+/*.btn-login:after{*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*   background-color: #606ac8;*/
+/*    bottom:0;*/
 
-}
+/*    width: 50px;*/
+/*    height: 100px;*/
+/*    content: "";*/
+/*    z-index: 1;*/
+
+
+/*}*/
+
 .register__right {
 
 }
@@ -81,20 +93,14 @@ select.form-control, input.form-control{
 }
 select.form-control:focus, input.form-control:focus{
     border-color: var(--main);
-    box-shadow: 0 0 0 0.2rem rgba(64,160,60,.3);
+    box-shadow: 0 0 0 0.2rem rgba(96, 106, 200, .3);
 }
 label span{
     display: inline-block;
     padding: 10px;
 }
 
-input[type=radio] {
-    border: 5px solid #0DFF92;
-}
 
-input[type=radio]:checked {
-    background: #0DFF92;
-}
 .submit-register{
 padding-top:10px ;
 }

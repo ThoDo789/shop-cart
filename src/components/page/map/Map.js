@@ -11,8 +11,8 @@ const Map = () => {
             zoom: 13
         }
     );
-    // console.log(map); // instance of created Map object (https://developers.google.com/maps/documentation/javascript/reference/map)
-    // console.log(google); // google API object (easily get google.maps.LatLng or google.maps.Marker or any other Google Maps class)
+    console.log(map); // instance of created Map object (https://developers.google.com/maps/documentation/javascript/reference/map)
+    console.log(google); // google API object (easily get google.maps.LatLng or google.maps.Marker or any other Google Maps class)
 
     return (
         <div className="map-google container-fluid">

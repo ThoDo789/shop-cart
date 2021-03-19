@@ -13,7 +13,7 @@ const initState = {
     products: [
         {
             id: 1,
-            name: 'sn shirt summer season'
+                name: 'sn shirt summer season'
             , image: '1.jpg',
             price: 20
             , discount: 2,

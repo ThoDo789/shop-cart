@@ -21,6 +21,7 @@
     "react-hook-google-maps": "0.0.3",
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.2",
+    "react-redux-firebase": "^3.10.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "react-select": "^4.1.0",

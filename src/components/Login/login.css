@@ -7,7 +7,7 @@
     padding-bottom: 30px;
     min-height: calc(100vh - 30em);
 }
-.btn-login{
+.btn-login-auth{
     background-color: var(--main);
     color: white;
     padding: 8px 20px;
@@ -16,7 +16,7 @@
     box-sizing: border-box;
     margin-top: 10px;
 }
-.btn-login:hover{
+.btn-login-auth:hover{
  background-color: white;
     color: var(--main);
 
