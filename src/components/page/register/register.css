@@ -43,44 +43,20 @@
     text-align: center;
 }
 
-.btn-login {
+a.btn-login {
     position: relative;
     margin-top: 50px;
     width: max-content;
     padding: 6px 30px;
-    color:var(--main);
+    background-color: white;
     border:1px solid var(--main);
     transition: all .2s linear;
-}
-/*.btn-login:after{*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*   background-color: #606ac8;*/
-/*    bottom:0;*/
-
-/*    width: 50px;*/
-/*    height: 100px;*/
-/*    content: "";*/
-/*    z-index: 1;*/
-
-
-/*}*/
-
-.register__right {
+    display: inline-block;
+    color: var(--main);
+    text-decoration: none;
 
 }
 
-.select-subject {
-
-}
-
-.employee {
-
-}
-
-.Hirer {
-
-}
 .form-title{
     margin: 30px 0;
     text-align: center;

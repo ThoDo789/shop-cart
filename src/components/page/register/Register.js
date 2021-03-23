@@ -4,6 +4,7 @@ import './register.css'
 
 import {useSelector} from "react-redux";
 import RegisterMember from "./RegisterMember";
+import {Link} from "react-router-dom";
 
 const Register = () => {
     const {themes} = useSelector(state => state.ProductReducer)
@@ -22,7 +23,7 @@ const Register = () => {
                           Consequuntur culpa cumque deserunt dolores ea, enim,
                           in iste laborum molestias necessitatibus non nulla.
                       </p>
-                      <button type="submit" className="btn-login">Login</button>
+                      <Link to="/login" className="btn-login">Login</Link>
                   </div>
                   <div className="col-lg-8  register__right">
                       <div className="row">

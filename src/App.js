@@ -1,4 +1,4 @@
-import React, {Suspense, useState} from "react"
+import React, {Suspense} from "react"
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from "./store/store";
@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Loading from "./components/page/loading/Loading";
 import Footer from "./components/page/footer/Footer";
 import Map from "./components/page/map/Map";
+import UserList from "./components/admin/user/UserList";
 
 const Nav = React.lazy(() => import('./components/page/nav/Nav'));
 const Home = React.lazy(() => import('./components/page/home/Home'));
@@ -21,19 +22,13 @@ const Register = React.lazy(() => import('./components/page/register/Register'))
 const Login = React.lazy(() => import('./components/Login/Login'));
 
 function App() {
-
-
-
     return (
 
         <Router className="App">
             <Suspense fallback={<Loading/>}>
                 <Provider store={store}>
-
-                    <Nav />
-
+                    <Nav/>
                     <Switch>
-
                         <Route path="/" exact component={Home}/>
                         <Route path="/cart" component={Cart}/>
                         <Route path="/detail/:id" exact component={Details}/>
@@ -41,16 +36,14 @@ function App() {
                         <Route path="/contact" component={Contact}/>
                         <Route path="/register" component={Register}/>
                         <Route path="/login" component={Login}/>
-
+                        <Router path="/user-list" component={UserList}/>
                         <Route component={PageNotFound}/>
-
                     </Switch>
                     <Map/>
                     <Footer/>
                 </Provider>
             </Suspense>
         </Router>
-
     );
 }
 

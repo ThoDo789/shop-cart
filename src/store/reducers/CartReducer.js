@@ -17,6 +17,7 @@ const CartReducer = (state = initialState, action) => {
         case ADD_TO_CART:
 
             const {product, quantity} = action.payload
+
             console.log(typeof product.id)
 
             const check = state.products.find(pr => pr.id === product.id)

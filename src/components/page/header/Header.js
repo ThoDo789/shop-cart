@@ -8,6 +8,6 @@ const Header = () => {
             </h2>
         </div>
     );
-};   wellcome
+};
 
 export default Header;

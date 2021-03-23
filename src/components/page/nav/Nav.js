@@ -33,7 +33,7 @@ const Nav = () => {
     return (
         <div className="navbar container-fluid" style={themes}>
 
-            <div className="nav__container row">
+            <div className="nav__container">
 
                 <div className="nav__left">
                     <button className="btn-home" onClick={backHome} type="button"><img src="/images/store-location-logo.svg" alt=""/>

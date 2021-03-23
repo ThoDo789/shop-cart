@@ -25,7 +25,7 @@ const Footer = () => {
                        </div>
                        <div className="footer__support">
                            <BsEnvelopeFill/>
-                           <span className="support">thodo7199@gmail.com</span>
+                           <a href="#" className="support">thodo7199@gmail.com</a>
                        </div>
                    </div>
 
@@ -41,10 +41,10 @@ const Footer = () => {
                                took a galley of type and scrambled
                                it to make a type specimen book.</p>
                             <div className="footer__socials">
-                                <span className="footer__icon"><FaFacebookSquare/></span>
-                                <span className="footer__icon"><FaTwitterSquare/></span>
-                                <span className="footer__icon"><SiGmail/></span>
-                                <span className="footer__icon"><FaGithubSquare/></span>
+                                <a href="#" className="footer__icon"><FaFacebookSquare/></a>
+                                <a href="#" className="footer__icon"><FaTwitterSquare/></a>
+                                <a href="#" className="footer__icon"><SiGmail/></a>
+                                <a href="#" className="footer__icon"><FaGithubSquare/></a>
 
                             </div>
                    </div>

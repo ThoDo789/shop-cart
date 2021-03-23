@@ -25,17 +25,18 @@
 
 
 }
-.number-phone{
+a.number-phone{
     color: var(--main);
 }
-.number-phone:hover{
+.number-phone:hover, a.support:hover{
     color:#f74545
 }
 .location--title strong{
     display: block;
-
 }
-
+a.support{
+    color: var(--main)
+}
 
 .footer__info--title{
     text-align: center;
@@ -50,12 +51,13 @@ font-size: 12px;
 .footer__socials{
 
 }
-.footer__icon svg{
+a.footer__icon svg{
     margin-right: 5px;
     font-size: 30px;
     transition: all .2s linear;
+    color: var(--white)
 
 }
-.footer__icon svg:hover{
+a.footer__icon svg:hover{
     color: var(--main);
 }
