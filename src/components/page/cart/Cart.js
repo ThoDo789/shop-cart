@@ -12,7 +12,6 @@ const Cart = () => {
             <div className="container">
                 <h3>your cart</h3>
                 <CartList/>
-
             </div>
         </div>
     );

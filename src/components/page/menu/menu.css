@@ -11,12 +11,13 @@
     overflow: hidden;
     transition: all .3s ease-in-out;
     min-height: 0;
+    padding: 0 15px;
 
 
 }
 
 .menu-open {
-    height: 50vh;
+    height: 30vh;
     min-height: 328px;
 
 }

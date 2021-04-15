@@ -1,6 +1,22 @@
-import React from 'react';
-import './userList.css'
+
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from "react-redux";
+
+import {Link} from "react-router-dom";
+import currencyFormatter from "currency-formatter";
+import './userList.css';
+import { getUser } from '../../../store/actions/ActionUser';
+
+    
+
 const UserList = () => {
+    const dispatch = useDispatch()
+    const {loading, users, error} = useSelector(state => state.userReducer)
+    console.log(users)
+    useEffect(() => {
+        dispatch(getUser())
+    }, [dispatch])
+
     return (
         <div className="user">
             <table className="table">
